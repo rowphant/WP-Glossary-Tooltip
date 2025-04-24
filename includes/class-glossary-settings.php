@@ -40,9 +40,9 @@ class Glossary_Settings
     {
         add_options_page(
             'Glossary Settings',
-            'Glossary',
+            'Glossary Tooltip',
             'manage_options',
-            'glossary-settings',
+            'glossary-tooltip-settings',
             array($this, 'glossary_settings_page_callback')
         );
     }
@@ -53,8 +53,8 @@ class Glossary_Settings
         <div class="wrap">
             <h1>Glossary Settings</h1>
             <form method="post" action="options.php">
-                <?php settings_fields('glossary-settings-group'); ?>
-                <?php do_settings_sections('glossary-settings-group'); ?>
+                <?php settings_fields('glossary-tooltip-settings-group'); ?>
+                <?php do_settings_sections('glossary-tooltip-settings-group'); ?>
                 <?php submit_button(); ?>
             </form>
         </div>
@@ -67,14 +67,14 @@ class Glossary_Settings
             'glossary-settings-section',
             'Glossary Settings',
             array($this, 'glossary_settings_section_callback'),
-            'glossary-settings-group'
+            'glossary-tooltip-settings-group'
         );
 
         add_settings_field(
             'glossary_theme',
             'Theme',
             array($this, 'glossary_theme_callback'),
-            'glossary-settings-group',
+            'glossary-tooltip-settings-group',
             'glossary-settings-section'
         );
 
@@ -82,7 +82,7 @@ class Glossary_Settings
         //     'glossary_custom_theme',
         //     'Custom Theme',
         //     array($this, 'glossary_custom_theme_callback'),
-        //     'glossary-settings-group',
+        //     'glossary-tooltip-settings-group',
         //     'glossary-settings-section'
         // );
 
@@ -90,7 +90,7 @@ class Glossary_Settings
             'glossary_animation',
             'Animation',
             array($this, 'glossary_animation_callback'),
-            'glossary-settings-group',
+            'glossary-tooltip-settings-group',
             'glossary-settings-section'
         );
 
@@ -98,7 +98,7 @@ class Glossary_Settings
         //     'glossary_custom_animation',
         //     'Custom Animation',
         //     array($this, 'glossary_custom_animation_callback'),
-        //     'glossary-settings-group',
+        //     'glossary-tooltip-settings-group',
         //     'glossary-settings-section'
         // );
 
@@ -106,7 +106,7 @@ class Glossary_Settings
             'glossary_trigger',
             'Trigger',
             array($this, 'glossary_trigger_callback'),
-            'glossary-settings-group',
+            'glossary-tooltip-settings-group',
             'glossary-settings-section'
         );
 
@@ -114,7 +114,7 @@ class Glossary_Settings
             'gt_truncate',
             'Truncate Length',
             array($this, 'gt_truncate_callback'),
-            'glossary-settings-group',
+            'glossary-tooltip-settings-group',
             'glossary-settings-section'
         );
 
@@ -122,17 +122,17 @@ class Glossary_Settings
             'gt_show_link',
             'Show Link',
             array($this, 'gt_show_link_callback'),
-            'glossary-settings-group',
+            'glossary-tooltip-settings-group',
             'glossary-settings-section'
         );
 
-        register_setting('glossary-settings-group', 'glossary_theme');
-        // register_setting('glossary-settings-group', 'glossary_custom_theme');
-        register_setting('glossary-settings-group', 'glossary_animation');
-        // register_setting('glossary-settings-group', 'glossary_custom_animation');
-        register_setting('glossary-settings-group', 'glossary_trigger');
-        register_setting('glossary-settings-group', 'gt_truncate');
-        register_setting('glossary-settings-group', 'gt_show_link');
+        register_setting('glossary-tooltip-settings-group', 'glossary_theme');
+        // register_setting('glossary-tooltip-settings-group', 'glossary_custom_theme');
+        register_setting('glossary-tooltip-settings-group', 'glossary_animation');
+        // register_setting('glossary-tooltip-settings-group', 'glossary_custom_animation');
+        register_setting('glossary-tooltip-settings-group', 'glossary_trigger');
+        register_setting('glossary-tooltip-settings-group', 'gt_truncate');
+        register_setting('glossary-tooltip-settings-group', 'gt_show_link');
     }
 
     public function glossary_settings_section_callback()
