@@ -2,12 +2,24 @@
 
 Glossary Tooltip Plugin allows you to easily create a glossary of terms that automatically highlights and links keywords in your content. When a defined term appears in a post or page, it is highlighted and a tooltip with a short description appears on hover. Users can click the term to navigate to a detailed glossary entry.
 
-#### Features
+### Features
 - Create glossary entries with title and description.
 - Automatically highlights defined terms across your content.
 - Displays tooltips with term descriptions on hover.
 - Links each term to its dedicated glossary entry page.
-- Easy to manage entries from the WordPress admin dashboard.
+- Define related terms to connect synonyms or words from the same word family.
+- Manage all entries from the WordPress admin dashboard.
+
+### Customization Options
+The plugin offers various settings to customize how the tooltips appear and behave:
+
+- Choose between multiple tooltip themes.
+- Select a tooltip animation style.
+- Set the trigger event (e.g. hover or click).
+- Define the length of the text preview shown in the tooltip.
+- Enable or disable the link to the full glossary entry in the tooltip.
+
+This plugin is perfect for blogs, documentation sites, educational content, or any WordPress website where explaining terms enhances the user experience.
 
 
 
