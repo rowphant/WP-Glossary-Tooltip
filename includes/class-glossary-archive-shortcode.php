@@ -3,7 +3,7 @@ class Glossary_Archive_Shortcode
 {
     public function __construct()
     {
-        add_shortcode('glossary_posts', array($this, 'glossary_archive_shortcode'));
+        add_shortcode('gt_glossary_posts', array($this, 'glossary_archive_shortcode'));
     }
     public function glossary_archive_shortcode()
     {
