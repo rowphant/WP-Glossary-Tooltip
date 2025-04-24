@@ -1,0 +1,15 @@
+# Ignore wp-config.php
+wp-config.php
+
+# Ignore uploads
+uploads/
+
+# Ignore node_modules
+node_modules/
+
+# Ignore Composer files
+composer.lock
+vendor/
+
+# Ignore log files
+*.log

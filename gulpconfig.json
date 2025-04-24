@@ -1,0 +1,21 @@
+{
+	"slug": "glossary-tooltip",
+	"browserSyncOptions": {
+		"proxy": "localhost:9000/",
+		"notify": false
+	},
+	"browserSyncWatchFiles": ["./css/*.min.css", "./js/*.min.js", "./**/*.php"],
+	"paths": {
+		"js": "./assets/js",
+		"css": "./assets/css",
+		"img": "./img",
+		"imgsrc": "./src/img",
+		"sass": "./src/sass",
+		"node": "./node_modules/",
+		"bower": "./bower_components/",
+		"dev": "./src",
+		"dist": "./dist/glossary-tooltips",
+		"distprod": "./dist/glossary-tooltip",
+		"vendors": "./src/vendors"
+	}
+}

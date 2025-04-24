@@ -1,0 +1,9 @@
+@import url(../../../../src/vendors/tippy.js/themes/light-border.css);
+.tippy-box[data-theme~=light-border] .gt-tooltip-title,
+.tippy-box[data-theme~=light-border] .gt-tooltip-excerpt,
+.tippy-box[data-theme~=light-border] .gt-tooltip-link,
+.tippy-box[data-theme~=light-border] .gt-tooltip-link a {
+  color: rgba(0, 0, 0, 0.75);
+  border-color: rgba(0, 0, 0, 0.2);
+}
+/*# sourceMappingURL=data:application/json;charset=utf8;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbInRpcHB5LmpzL3RoZW1lcy9saWdodC1ib3JkZXIuc2NzcyJdLCJuYW1lcyI6W10sIm1hcHBpbmdzIjoiQUFHUTtBQUlOO0FBQUE7QUFBQTtBQUFBO0VBSUU7RUFDQSIsInNvdXJjZXNDb250ZW50IjpbIi8vIFdlIGNhbiBvdmVyd3JpdGUgdGhlIHZlbmRvciB0aGVtZSBoZXJlXG5cbi8vIDEuIEltcG9ydCB0aGUgb3JpZ2luYWwgdmVuZG9yIHRoZW1lXG5AaW1wb3J0IHVybCguLi8uLi8uLi8uLi9zcmMvdmVuZG9ycy90aXBweS5qcy90aGVtZXMvbGlnaHQtYm9yZGVyLmNzcyk7XG5cbi8vIDIuIE92ZXJ3cml0ZSB0aGUgY29sb3JzXG4udGlwcHktYm94W2RhdGEtdGhlbWV+PVwibGlnaHQtYm9yZGVyXCJdIHtcbiAgLmd0LXRvb2x0aXAtdGl0bGUsXG4gIC5ndC10b29sdGlwLWV4Y2VycHQsXG4gIC5ndC10b29sdGlwLWxpbmssXG4gIC5ndC10b29sdGlwLWxpbmsgYSB7XG4gICAgY29sb3I6IHJnYmEoMCwgMCwgMCwgMC43NSk7XG4gICAgYm9yZGVyLWNvbG9yOiByZ2JhKDAsIDAsIDAsIDAuMik7XG4gIH1cbn1cbiJdLCJmaWxlIjoidGlwcHkuanMvdGhlbWVzL2xpZ2h0LWJvcmRlci5jc3MifQ== */

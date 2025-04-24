@@ -1,0 +1,8 @@
+.tippy-box[data-theme~=dark] .gt-tooltip-title,
+.tippy-box[data-theme~=dark] .gt-tooltip-excerpt,
+.tippy-box[data-theme~=dark] .gt-tooltip-link,
+.tippy-box[data-theme~=dark] .gt-tooltip-link a {
+  color: rgba(255, 255, 255, 0.75);
+  border-color: rgba(255, 255, 255, 0.3);
+}
+/*# sourceMappingURL=data:application/json;charset=utf8;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbInRpcHB5LmpzL3RoZW1lcy9kYXJrLnNjc3MiXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IkFBQ0U7QUFBQTtBQUFBO0FBQUE7RUFJRTtFQUNBIiwic291cmNlc0NvbnRlbnQiOlsiLnRpcHB5LWJveFtkYXRhLXRoZW1lfj1cImRhcmtcIl0ge1xuICAuZ3QtdG9vbHRpcC10aXRsZSxcbiAgLmd0LXRvb2x0aXAtZXhjZXJwdCxcbiAgLmd0LXRvb2x0aXAtbGluayxcbiAgLmd0LXRvb2x0aXAtbGluayBhIHtcbiAgICBjb2xvcjogcmdiYSgyNTUsIDI1NSwgMjU1LCAwLjc1KTtcbiAgICBib3JkZXItY29sb3I6IHJnYmEoMjU1LCAyNTUsIDI1NSwgMC4zKTtcbiAgfVxufVxuIl0sImZpbGUiOiJ0aXBweS5qcy90aGVtZXMvZGFyay5jc3MifQ== */

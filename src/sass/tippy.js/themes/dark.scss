@@ -1,0 +1,9 @@
+.tippy-box[data-theme~="dark"] {
+  .gt-tooltip-title,
+  .gt-tooltip-excerpt,
+  .gt-tooltip-link,
+  .gt-tooltip-link a {
+    color: rgba(255, 255, 255, 0.75);
+    border-color: rgba(255, 255, 255, 0.3);
+  }
+}

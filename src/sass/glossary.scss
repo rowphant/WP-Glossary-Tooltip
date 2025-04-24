@@ -1,0 +1,70 @@
+@import url(../../src/vendors/tippy.js/tippy.css);
+@import url(../../src/vendors/tippy.js/animations/scale.css);
+@import url(../../src/vendors/tippy.js/animations/shift-away-subtle.css);
+
+/* Global tooltip styles */
+.tippy-content {
+  padding: 1rem;
+}
+.gt-tooltip-trigger {
+  cursor: pointer;
+}
+.gt-tooltip-trigger:after {
+  content: '';
+  display: block;
+  max-width: 100%;
+  border-bottom: 1px dotted;
+  position: relative;
+  margin-top: -4px;
+}
+
+.gt-tooltip-parent {
+  display: inline-block;
+}
+
+.gt-tooltip-title {
+  font-weight: 600;
+  margin-bottom: 6px;
+  padding: .5rem 0;
+  border-bottom: 1px dashed;
+  font-size: 1.25rem;
+}
+
+.gt-tooltip-excerpt {
+  font-weight: normal;
+  padding: .5rem 0;
+}
+
+.gt-tooltip-link a {
+  display: block;
+  padding-top: 0.4rem;
+  padding-bottom: 0.4rem;
+  border: 1px solid;
+  border-radius: 3px;
+  text-align: center;
+  margin-top: .5rem;
+  // border-top: 1px solid;
+  &:hover,
+  &:focus {
+    text-decoration: none;
+  }
+}
+.gt-tooltip-link a {
+  font-weight: normal;
+  font-size: 12px;
+  box-shadow: none;
+  text-decoration: none;
+}
+
+/* TABLET LANDSCAPE */
+/* TABLET PORTRAIT */
+/* MOBILE LANDSCAPE */
+/* MOBILE PORTRAIT */
+/* RETINA FIXES */
+/* =========================
+    PUBLIC RESPONSIVE CSS END
+========================= */
+article.glossary .entry-header {
+  display: inline-block;
+  float: none !important;
+}

@@ -1,0 +1,15 @@
+// We can overwrite the vendor theme here
+
+// 1. Import the original vendor theme
+@import url(../../../../src/vendors/tippy.js/themes/light-border.css);
+
+// 2. Overwrite the colors
+.tippy-box[data-theme~="light-border"] {
+  .gt-tooltip-title,
+  .gt-tooltip-excerpt,
+  .gt-tooltip-link,
+  .gt-tooltip-link a {
+    color: rgba(0, 0, 0, 0.75);
+    border-color: rgba(0, 0, 0, 0.2);
+  }
+}
