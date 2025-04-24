@@ -16,10 +16,9 @@ class Glossary_Archive_Shortcode
 
         $query = new WP_Query($args);
         $posts = $query->posts;
+        $entries = [];
 
         $output = '';
-
-        $current_letter = null;
 
         foreach ($posts as $post) {
             $title = $post->post_title;
@@ -34,28 +33,31 @@ class Glossary_Archive_Shortcode
                     }
                 }
             }
-            
+
             $first_letter = strtoupper(substr($title, 0, 1));
-            echo $first_letter;
 
-            if ($first_letter != $current_letter) {
-                if ($current_letter != null) {
-                    $output .= '</ul></div>';
-                }
-
-                $output .= '<div id="' . strtolower($first_letter) . '">';
-                $output .= '<h2>' . $first_letter . '</h2>';
-                $output .= '<ul>';
-
+            if (!isset($entries[$first_letter])) {
+                $entries[$first_letter] = array();
             }
-
-            $current_letter = $first_letter;
-            $output .= '<li><a href="' . get_permalink($post->ID) . '">' . $post->post_title . '</a></li>';
-            
+            $entries[$first_letter][] = array(
+                'ID' => $post->ID,
+                'post_title' => $post->post_title,
+                'permalink' => get_permalink($post->ID)
+            );
         }
 
-        $output .= '</div>';
-        $output .= '</ul>';
+        ksort($entries);
+
+        foreach ($entries as $letter => $posts) {
+            $output .= '<div id="' . strtolower($letter) . '">';
+            $output .= '<h2>' . $letter . '</h2>';
+            $output .= '<ul>';
+            foreach ($posts as $post) {
+                $output .= '<li><a href="' . get_permalink($post['ID']) . '">' . $post['post_title'] . '</a></li>';
+            }
+            $output .= '</ul>';
+            $output .= '</div>';
+        }
 
         // WP_Query zurücksetzen
         wp_reset_postdata();
