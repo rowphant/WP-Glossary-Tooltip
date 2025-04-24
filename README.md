@@ -46,8 +46,8 @@ This project uses Gulp to automate tasks. The following tasks are available:
 ## Folder Structure
 The project folder structure is as follows:
 
-sass: Contains SCSS files.<br>
-css: Contains compiled CSS files.<br>
-vendors: Contains third-party CSS files.<br>
-gulpfile.js: The main Gulp file.<br>
-package.json: The project's npm package file.
+- sass: Contains SCSS files.<br>
+- css: Contains compiled CSS files.<br>
+- vendors: Contains third-party CSS files.<br>
+- gulpfile.js: The main Gulp file.<br>
+- package.json: The project's npm package file.
