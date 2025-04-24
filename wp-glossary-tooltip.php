@@ -1,15 +1,32 @@
 <?php
 /*
-Plugin Name: Glossary
+Plugin Name: WP Glossary Tooltip
 Description: Ein Plugin, um ein Glossar zu erstellen und zu verwalten.
-Version: 1.0
-Author: Ihr Name
+Plugin URI: https://github.com/rowphant/WP-Glossary-Tooltip
+Version: 1.0.0
+Author: Robert Metzner
 */
 
 // Verhindert den direkten Zugriff auf die Datei
 if (!defined('ABSPATH')) {
     exit;
 }
+
+// Update Checker
+require 'plugin-update-checker/plugin-update-checker.php';
+use YahnisElsts\PluginUpdateChecker\v5\PucFactory;
+
+$myUpdateChecker = PucFactory::buildUpdateChecker(
+	'https://github.com/rowphant/WP-Glossary-Tooltip/',
+	__FILE__,
+	'wp-glossary-tooltip'
+);
+
+//Set the branch that contains the stable release.
+$myUpdateChecker->setBranch('master');
+
+//Optional: If you're using a private repository, specify the access token like this:
+// $myUpdateChecker->setAuthentication('your-token-here');
 
 // Einbinden der Klassen
 require_once plugin_dir_path(__FILE__) . 'includes/class-glossary-post-type.php';
