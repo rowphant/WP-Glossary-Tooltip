@@ -19,26 +19,42 @@ class Glossary_Archive_Shortcode
 
         $output = '';
 
-        $current_letter = '';
+        $current_letter = null;
 
         foreach ($posts as $post) {
-            $first_letter = strtoupper(substr($post->post_title, 0, 1));
+            $title = $post->post_title;
+
+            // Find the first word that starts with a letter
+            if (!preg_match('/^[A-Za-z]/', $title)) {
+                $words = explode(' ', $title);
+                foreach ($words as $index => $word) {
+                    if (preg_match('/^[A-Za-z]/', $word)) {
+                        $title = $word;
+                        break;
+                    }
+                }
+            }
+            
+            $first_letter = strtoupper(substr($title, 0, 1));
+            echo $first_letter;
 
             if ($first_letter != $current_letter) {
-                if ($current_letter != '') {
-                    $output .= '</ul>';
+                if ($current_letter != null) {
+                    $output .= '</ul></div>';
                 }
 
                 $output .= '<div id="' . strtolower($first_letter) . '">';
-                $output .= '<h2>' . $first_letter . '</h2><ul>';
+                $output .= '<h2>' . $first_letter . '</h2>';
+                $output .= '<ul>';
 
-                $current_letter = $first_letter;
             }
 
+            $current_letter = $first_letter;
             $output .= '<li><a href="' . get_permalink($post->ID) . '">' . $post->post_title . '</a></li>';
-            $output .= '</div>';
+            
         }
 
+        $output .= '</div>';
         $output .= '</ul>';
 
         // WP_Query zurücksetzen
