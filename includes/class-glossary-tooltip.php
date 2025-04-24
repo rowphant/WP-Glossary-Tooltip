@@ -28,8 +28,8 @@ class Glossary_Tooltip
         // Enqueue the CSS and JS files
         wp_enqueue_style('tooltip-css', plugin_dir_url(__FILE__) . '../assets/css/glossary.css');
 
-        $theme = get_option('glossary_theme', 'light-border');
-        $animation = get_option('glossary_animation', 'shift-away-subtle');
+        $theme = (get_option('glossary_theme')) ? get_option('glossary_theme') : 'light-border';
+        $animation = (get_option('glossary_animation')) ? get_option('glossary_animation', 'shift-away-subtle') : 'shift-away-subtle';
         // Themes
         wp_enqueue_style('tooltip-theme', plugin_dir_url(__FILE__) . '../assets/css/tippy.js/themes/' . $theme . '.min.css');
         // wp_enqueue_style('tooltip-theme-light-border', plugin_dir_url(__FILE__) . '../assets/css/tippy.js/themes/light-border.min.css');
@@ -90,9 +90,9 @@ class Glossary_Tooltip
 
     private function add_tooltip($content, $term, $id)
     {
-        $theme = get_option('glossary_theme', 'light-border');
-        $animation = get_option('glossary_animation', 'scale-subtle');
-        $trigger = get_option('glossary_trigger', 'mouseover');
+        $theme = (get_option('glossary_theme', 'light-border')) ? get_option('glossary_theme', 'light-border') : 'light-border';
+        $animation = (get_option('glossary_animation', 'shift-away-subtle')) ? get_option('glossary_animation', 'shift-away-subtle') : 'shift-away-subtle';
+        $trigger = (get_option('glossary_trigger', 'mouseover')) ? get_option('glossary_trigger', 'mouseover') : 'mouseover';
         // Create the HTML tooltip
         $tooltip_html = '<span class="gt-tooltip-parent"><span data-template-id="' . $id . '" data-tooltip-trigger="' . $trigger . '" data-tooltip-theme="' . $theme . '" data-tooltip-animation="' . $animation . '" class="gt-tooltip-trigger" tabindex="0">' . '$0' . '*</span></span>';
 

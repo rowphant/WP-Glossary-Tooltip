@@ -9,8 +9,8 @@ const instances = tippy(tippies, {
   appendTo: "parent",
   duration: [200, 200],
   delay: [200, 200],
-  theme: "light-border",
-  animation: "shift-away-subtle",
+  // theme: "light-border",
+  // animation: "shift-away-subtle",
   // animation: "scale",
   onShow(instance) {
     hideAll({ exclude: instance });
@@ -27,10 +27,13 @@ instances.forEach((instance) => {
   const theme = instance.reference.getAttribute("data-tooltip-theme");
   const animation = instance.reference.getAttribute("data-tooltip-animation");
   const trigger = instance.reference.getAttribute("data-tooltip-trigger");
-  // console.log('set theme: ', theme);
+  
   instance.setProps({
-    theme: theme,
-    animation: animation,
-    trigger: trigger,
+    theme: 'undefined',
+    animation: 'undefined',
+    trigger: 'undefined',
+    // theme: theme,
+    // animation: animation,
+    // trigger: trigger,
   });
 });
