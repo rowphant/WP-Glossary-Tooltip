@@ -1,6 +1,6 @@
 {
-  "name": "glossary",
-  "version": "1.0.0",
+  "name": "wp-glossary-tooltip",
+  "version": "1.0.5",
   "description": "",
   "main": "index.js",
   "scripts": {
