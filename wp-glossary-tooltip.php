@@ -3,7 +3,7 @@
 Plugin Name: WP Glossary Tooltip
 Description: Ein Plugin, um ein Glossar zu erstellen und zu verwalten.
 Plugin URI: https://github.com/rowphant/WP-Glossary-Tooltip
-Version: 1.0.0
+Version: 1.0.3
 Author: Robert Metzner
 */
 
