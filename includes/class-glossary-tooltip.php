@@ -47,29 +47,33 @@ class Glossary_Tooltip
 
     public function add_tooltips_to_content($content)
     {
+        $postID = get_the_ID();
         // Retrieve all glossary entries
         $glossary_entries = $this->get_glossary_entries();
 
         // Search content for terms and add tooltips
         foreach ($glossary_entries as $entry) {
-            $title = esc_html($entry->post_title);
-            $related_terms = get_post_meta($entry->ID, '_glossary_entry_related_terms', true);
-            $related_terms = explode(',', $related_terms);
+            // Prevent linking glossary entries to themselves
+            if ($entry->ID !== $postID) {
+                $title = esc_html($entry->post_title);
+                $related_terms = get_post_meta($entry->ID, '_glossary_entry_related_terms', true);
+                $related_terms = explode(',', $related_terms);
 
-            // Collect tooltip ID and add tooltips for the main term
-            if (!in_array($entry->ID, $this->tooltip_ids)) {
-                $this->tooltip_ids[] = $entry->ID;
-            }
-            $content = $this->add_tooltip($content, $title, $entry->ID);
+                // Collect tooltip ID and add tooltips for the main term
+                if (!in_array($entry->ID, $this->tooltip_ids)) {
+                    $this->tooltip_ids[] = $entry->ID;
+                }
+                $content = $this->add_tooltip($content, $title, $entry->ID);
 
-            // Collect tooltip IDs and add tooltips for related terms
-            foreach ($related_terms as $term) {
-                $term = trim($term);
-                if (!empty($term)) {
-                    if (!in_array($entry->ID, $this->tooltip_ids)) {
-                        $this->tooltip_ids[] = $entry->ID;
+                // Collect tooltip IDs and add tooltips for related terms
+                foreach ($related_terms as $term) {
+                    $term = trim($term);
+                    if (!empty($term)) {
+                        if (!in_array($entry->ID, $this->tooltip_ids)) {
+                            $this->tooltip_ids[] = $entry->ID;
+                        }
+                        $content = $this->add_tooltip($content, $term, $entry->ID);
                     }
-                    $content = $this->add_tooltip($content, $term, $entry->ID);
                 }
             }
         }
@@ -94,7 +98,17 @@ class Glossary_Tooltip
         $animation = (get_option('glossary_animation', 'shift-away-subtle')) ? get_option('glossary_animation', 'shift-away-subtle') : 'shift-away-subtle';
         $trigger = (get_option('glossary_trigger', 'mouseover')) ? get_option('glossary_trigger', 'mouseover') : 'mouseover';
         // Create the HTML tooltip
-        $tooltip_html = '<span class="gt-tooltip-parent"><span data-template-id="' . $id . '" data-tooltip-trigger="' . $trigger . '" data-tooltip-theme="' . $theme . '" data-tooltip-animation="' . $animation . '" class="gt-tooltip-trigger" tabindex="0">' . '$0' . '*</span></span>';
+        $tooltip_html = '
+            <span class="gt-tooltip-parent">
+                <span 
+                    data-template-id="' . $id . '" 
+                    data-tooltip-trigger="' . $trigger . '" 
+                    data-tooltip-theme="' . $theme . '" 
+                    data-tooltip-animation="' . $animation . '" 
+                    class="gt-tooltip-trigger" 
+                    tabindex="0">' . '$0' . '<span class="gt-tooltip-trigger-star">*</span>
+                </span>
+            </span>';
 
         // Flag for case sensitivity
         $case_sensitive = false;
