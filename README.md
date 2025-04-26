@@ -21,7 +21,7 @@ The plugin offers various settings to customize how the tooltips appear and beha
 
 This plugin is perfect for blogs, documentation sites, educational content, or any WordPress website where explaining terms enhances the user experience.
 
-
+![Screenshot of a page with tooltips](assets/images/screenshot-01.png)
 
 ## Table of Contents
 
